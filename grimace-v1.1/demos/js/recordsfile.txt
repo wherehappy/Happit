@@ -1,3 +1,5 @@
 EMOTIONS  E_disgust=0.47&
 EMOTIONS  E_disgust=0.67&
 EMOTIONS  E_disgust=0.86&
+EMOTIONS  E_joy=0.43&
+EMOTIONS  E_surprise=0.59&E_joy=0.43&
