@@ -256,7 +256,14 @@ function initButtons() {
 	var reset = document.getElementById('reset');
 	reset.onclick = function() {
 		grimace.addEventListener('emotionSet', 'onEmotionSet');
-		grimace.resetEmotion(0.3);
+		//grimace.resetEmotion(0.3); //NEUTRAL
+		
+		grimace.setEmotion({anger:Math.random(), surprise:Math.random()}, 0.3);
+
+	//	var r=Math.random();
+	//	grimace.setEmotion({r, 1-r}, 0.3);
+
+
 	}
 	if (reset.captureEvents) reset.captureEvents(Event.CLICK);
 
@@ -331,8 +338,7 @@ function initButtons() {
 		grimace.setScaleMode('noScale');
 		document.getElementById('sizeOptions').style.display = 'block';
 	}
-	if (noScale.captureEvents) noScale.captureEvents(Event.CLICK);
-	
+	if (noScale.captureEvents) noScale.captureEvents(Event.CLICK);	
 }
 
 function log2(emotions,ps,mysession){
@@ -351,10 +357,6 @@ xhReq.send(null);
 //
 
 }
-
-
-
-
 
 
 
