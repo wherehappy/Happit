@@ -275,7 +275,7 @@ function initButtons() {
 
 		var outpairs = '';
 		for(var i in emotion) {
-		   outpairs += ("X"+i+"="+emotion[i]+"&");
+		   outpairs += ("E_"+i+"="+emotion[i]+"&");
 		}
 if(!outpairs)
 	outpairs="X=0&";

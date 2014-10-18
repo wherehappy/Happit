@@ -1,2 +1,3 @@
-
-.
+EMOTIONS  E_disgust=0.47&
+EMOTIONS  E_disgust=0.67&
+EMOTIONS  E_disgust=0.86&

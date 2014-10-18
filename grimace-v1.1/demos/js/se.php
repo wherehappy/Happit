@@ -1,3 +1,4 @@
+
 EMOTION
 EMOTION PHP 
 
@@ -22,7 +23,7 @@ echo '<hr/>';
 <?php
 
 
-
+/*
 $message = "Test";
 $myFile = "/var/www/html/grimace-v1.1/demos/js/testFile.txt";
 if (file_exists($myFile)) {
@@ -35,7 +36,7 @@ if (file_exists($myFile)) {
   fwrite($fh, $message) ;
 }
 fclose($fh);
-
+*/
 
 
 /*
@@ -60,11 +61,11 @@ $myFile = "./recordsfile.txt";
 
 echo '(' . $myFile . ')';
 
-$fh = fopen($myFile, 'r');
+$fh = fopen($myFile, 'a');
 
-print_r(error_get_last(),true);
+//print_r(error_get_last(),true);
 
-
+/*
 echo '[' .$fh . '] file';
 if($fh){
 	fclose($fh);
@@ -74,14 +75,34 @@ echo 'FAILED OPENING FILE';
 
 print_r(error_get_last(),true);
 }
+*/
 /* or {echo ("can't open file");};
+*/
 
-$stringData = 'EMOTIONS' . $_GET . '\n';
+if($fh){
+//$stringData = 'EMOTIONS' . $_GET . "\n";
+
+$stringData = 'EMOTIONS  ' . $_SERVER['QUERY_STRING'] . "\n";
+
 fwrite($fh, $stringData);
 //$stringData = "New Stuff 2\n";
 //fwrite($fh, $stringData);
 fclose($fh);
-*/
+
+
+
+
+//echo '[' .$fh . '] file';
+//if($fh){
+//        fclose($fh);
+echo '(closed.)';
+
+}else{
+echo 'FAILED OPENING FILE';
+
+print_r(error_get_last(),true);
+}
+
 /*
 X_joy='0';
 if (isset($_GET["Xjoy"]))){
@@ -108,7 +129,7 @@ echo '. ';
 */
 
 
-phpinfo();
+//phpinfo();
 ?>
 
 
