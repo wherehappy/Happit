@@ -14,6 +14,18 @@ You cannot use the demo from a file:// context.
 </head>
 
 
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+
+
 <body id="webdeployBody"   onload="getLocation()" >
 
 <p id="Locdemo">Click the button to update your coordinates:</p>
@@ -43,7 +55,7 @@ function showPosition(position) {
 
 
 
-<button onclick="getLocation()">Update location</button>
+<!--<button onclick="getLocation()">Update location</button>-->
 
 
 	<div id="browse">
@@ -51,7 +63,9 @@ function showPosition(position) {
 		</ul>
 		<ul id="buttons">
 			<li> Hello  
-<input type="input" name="uname" value="nima" id="uname"/> @
+<input type="input" name="uname" value="nima" id="uname"/> 
+<button onclick="getLocation()">UpdateLoc</button>
+@
 <input type="input" name="locx" value="" id="locx" style="width:30px;"
 />x<input type="input" name="locy" value="" id="locy" style="width:30px;"
 />
@@ -99,10 +113,6 @@ style="height:50px;"
 			
 				<input type="button" name="reset" value="Neutral" id="reset"/>
 			</li>
-<!--			<li>
-				<input type="button" name="getEmotion" value="Get current emotion*************" id="getEmotion"/>
-			</li>
--->
 
 			<li><h4>Functions</h4></li>
 			<li>
