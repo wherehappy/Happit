@@ -1,5 +1,6 @@
 // portions courtesy of http://livedocs.adobe.com/flash/9.0/ActionScriptLangRefV3/flash/external/ExternalInterface.html
 var grimace;
+var mysession;
 
 var jsReady = false;
 function isReady() {
@@ -260,6 +261,32 @@ function initButtons() {
 	if (reset.captureEvents) reset.captureEvents(Event.CLICK);
 
 
+
+
+
+        //var uname = document.getElementById('uname');
+        set2.onclick = function() {
+                //grimace.addEventListener('emotionSet', 'onUnameSet');
+		var uname = document.getElementById('uname');
+
+                mysession.uname=uname.value;
+//var uname = document.getElementById('uname');
+        }
+        if (set2.captureEvents) set2.captureEvents(Event.CLICK);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	var getEmotion = document.getElementById('getEmotion');
 	getEmotion.onclick = function() {
   	// *************************
@@ -277,10 +304,10 @@ function initButtons() {
 		for(var i in emotion) {
 		   outpairs += ("E_"+i+"="+emotion[i]+"&");
 		}
-if(!outpairs)
-	outpairs="X=0&";
+		if(!outpairs)
+			outpairs="&";
 		
-		log2(emotion,outpairs);
+		log2(emotion,outpairs,mysession);
 	// ******************************
 	}
 	if (getEmotion.captureEvents) getEmotion.captureEvents(Event.CLICK);
@@ -308,20 +335,31 @@ if(!outpairs)
 	
 }
 
-function log2(emotions,ps){
-//alert(emotions);
-//alert(ps);
+function log2(emotions,ps,mysession){
+
+ var uname = document.getElementById('uname').value;
+
+var ss;
+//ss="un="+mysession.uname;
+ss="un="+uname+"&";
  var xhReq = new XMLHttpRequest();
-// xhReq.open("GET", "sumGet.phtml?figure1=5&figure2=10"+ps, false);
- xhReq.open("GET", "se.php?"+ps, false); //eubmit emotion
-//
-//
+ xhReq.open("GET", "se.php?"+ss+ps, false); //eubmit emotion
+
 xhReq.send(null);
  var serverResponse = xhReq.responseText;
  alert(ps+" "+serverResponse); // Shows "15"
 //
 
 }
+
+
+
+
+
+
+
+
+
 function log(msg) {
 	document.getElementById('log').innerHTML = msg;
 

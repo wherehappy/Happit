@@ -3,3 +3,12 @@ EMOTIONS  E_disgust=0.67&
 EMOTIONS  E_disgust=0.86&
 EMOTIONS  E_joy=0.43&
 EMOTIONS  E_surprise=0.59&E_joy=0.43&
+EMOTIONS  E_joy=0.49&
+EMOTIONS  X=0&
+EMOTIONS  E_surprise=0.44&
+EMOTIONS  E_sadness=0.27&
+EMOTIONS  &
+EMOTIONS  un=[object%20HTMLInputElement]E_fear=0.41&
+EMOTIONS  un=[object%20HTMLInputElement]E_joy=0.64&E_disgust=0.99&
+EMOTIONS  un=nima&&
+EMOTIONS  un=nima&E_joy=0.59&
