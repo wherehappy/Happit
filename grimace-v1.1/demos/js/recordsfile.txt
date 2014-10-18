@@ -12,3 +12,6 @@ EMOTIONS  un=[object%20HTMLInputElement]E_fear=0.41&
 EMOTIONS  un=[object%20HTMLInputElement]E_joy=0.64&E_disgust=0.99&
 EMOTIONS  un=nima&&
 EMOTIONS  un=nima&E_joy=0.59&
+EMOTIONS  un=nima&E_joy=0.45&
+EMOTIONS  un=nima&&
+EMOTIONS  un=nima&&

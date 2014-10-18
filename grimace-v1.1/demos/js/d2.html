@@ -18,27 +18,30 @@ You cannot use the demo from a file:// context.
 
 <p id="Locdemo">Click the button to update your coordinates:</p>
 
-<!--
 <script>
 var x = document.getElementById("Locdemo");
 
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
-    } else { 
+    } else {
         x.innerHTML = "Geolocation is not supported by this browser.";
     }
 }
 
 function showPosition(position) {
-    x.innerHTML="<small>Your location: Latitude= " + position.coords.latitude + 
+    x.innerHTML="<small>Your location: Latitude= " + position.coords.latitude +
     " Longitude= " + position.coords.longitude + " </small> ";
+	//alert("location");
+	var locxel = document.getElementById("locx");
+	var locyel = document.getElementById("locy");
+	locxel.value=position.coords.latitude +"";
+	locyel.value=position.coords.longitude +"";
 }
-
 //getLocation();
-
 </script>
--->
+
+
 
 <button onclick="getLocation()">Update location</button>
 
@@ -48,7 +51,10 @@ function showPosition(position) {
 		</ul>
 		<ul id="buttons">
 			<li> Hello  
-<input type="input" name="uname" value="nima" id="uname"/>
+<input type="input" name="uname" value="nima" id="uname"/> @
+<input type="input" name="locx" value="" id="locx" style="width:30px;"
+/>x<input type="input" name="locy" value="" id="locy" style="width:30px;"
+/>
 
  </li>
 			<li><h4>What is your emotion?</h4></li>
@@ -167,29 +173,6 @@ style="height:50px;"
 <script src="demo.js" type="text/javascript" charset="utf-8"></script>
 
 <p><small><small>(C) Happit (Nima,Sohail,Bahador,Tanja), (C) Grimace.</small></small></p>
-
-
-
-<script>
-var x = document.getElementById("Locdemo");
-
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-        x.innerHTML = "Geolocation is not supported by this browser.";
-    }
-}
-
-function showPosition(position) {
-    x.innerHTML="<small>Your location: Latitude= " + position.coords.latitude +
-    " Longitude= " + position.coords.longitude + " </small> ";
-}
-
-//getLocation();
-
-</script>
-
 
 
 
