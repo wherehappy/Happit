@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="grimaceweb.css" type="text/css" media="screen">
+<title>Embedding - Grimace documentation</title>
+</head>
+<body>
+<h1>Embedding</h1>
+
+<h2>Embedding in websites (JavaScript control)</h2>
+
+<p>Usage in HTML files is in line with general best practice of Flash embedding; an <code>&lt;embed&gt;</code> tag nested in an <code>&lt;object&gt;</code> tag. Grimace should be compatible with any browser which supports the Flash Player 9 plugin and JavaScript.</p>
+
+<p>For a detailed example see the included demo in the directory <code>js</code>.</p> The demo makes use of <a href="http://jquery.com/">JQuery</a>, so this library's compatibility restrictions (Internet Explorer 6+, Firefox 3+, Safari 3+, Opera 9+) apply.
+
+<h3>API access</h3>
+
+<p>All methods, including event related ones, can be directly called through the Grimace instance.</p>
+
+
+<h2>Embedding in Flash, Flex and ActionScript 3 projects</h2>
+
+<p>Grimace can be embedded into Flash CS4, Flex and ActionScript 3 projects. Since the component is not open source, the precompiled component Grimace.swf needs to be embedded.</p>
+
+<p>It is not possible to use Grimace with Flash CS3! Though this version supports ActionScript 3, the <code>[Embed]</code> compiler metatag which is used to embed the component is not understood by Flash CS3.</p>
+
+<p>The embedding approach is the same for all three platforms and follows this scheme:</p>
+
+<pre class="code">
+  public var grimace:*;
+
+  [Embed(source="../bin/Grimace.swf", mimeType="application/octet-stream")]
+  private var grimaceClass:Class;
+  
+  public function Embed() {
+    var grimaceBytes:ByteArray = (new grimaceClass() as ByteArray);
+    var ldr:Loader = new Loader();
+    ldr.loadBytes(grimaceBytes, new LoaderContext(false, ApplicationDomain.currentDomain));
+    var scope:* = this;
+    ldr.contentLoaderInfo.addEventListener(Event.COMPLETE, function():void {
+      scope.init(ldr.content);
+    });
+  }
+  
+  public function init(grimace:*):void {
+    this.grimace = grimace;
+    addChild(grimace);
+    
+    // now you can access all API methods
+  }
+</pre>
+
+
+<h3>API access</h3>
+
+<p>Accessed via ActionScript 3, the API is split across two properties of the Grimace instance.</p>
+
+<ul>
+	
+<li>Methods related to events (<code><a href="api.html#addEventListener()">addEventListener()</a></code> and <code><a href="api.html#removeEventListener()">removeEventListener()</a></code>) are accessible via the <code>events</code> property.</li>
+
+<li>All other methods are accessible via the <code>api</code> property.</li>
+
+</ul>
+
+In the above example (instance named <code>grimace</code>), you would call <code>grimace.events.addEventListener</code> and <code>grimace.api.loadFacedata</code>.
+
+</body>
+</html>

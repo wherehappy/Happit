@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="grimaceweb.css" type="text/css" media="screen">
+<title>Grimace documentation</title>
+</head>
+<body>
+	
+<h1>Facedata XML file format</h1>
+current version:
+http://grimace-project.net/dtd/facedata01.dtd
+
+
+<p>Faces are entirely defined through external files which are loaded at runtime. This allows the development of faces which look entirely different to the standard face we developed. Additional emotions can also be implemented.</p>
+<p>A complete set of Facedata defines the following:</p>
+<ul>
+<li>Features, which are the visible elements of a face. Features can be transformed by muscles. Typically, this includes dynamic features like eyes, eyebrows, mouth and wrinkles, as well as static features like nose and head outline.</li>
+
+<li>Muscles, which are the link between emotions and features. The shape of a muscle is defined by a spline and when contracted can move an arbitrary number of control points along its path.</li>
+
+<li>Emotions, which are the high-level concept which influence a number of muscles in an arbitrary fashion. Each emotion affects specific regions of the face and results in familiar facial expressions.</li>
+
+<li>Overlays, which are optional graphical elements added on top of the face to add additional personality to the face. In the standard model, the hairdo is an overlayed vector graphic. Pixel-based graphics can also be included.</li>
+</ul>
+
+<p>Facedata is an XML-based file format. Currently, no graphical editor is available; Facedata has to be edited manually. A corresponding DTD is kept up-to-date with the current capabilities of Grimace and allows face developers to validate their files through an XML validation service.</p>
+
+<p>Since the definitions can become quite large and data have to be edited manually, Facedata definitions can be spread across files. The <a href="api.html#loadFacedata()">loadFacedata</a> method takes an array or URLs as parameter, loading the files in the supplied order.</p>
+
+<h2>Example file</h2>
+
+<a href="facedataexample.xml" title="Facedata example file">Download Facedata example file</a>
+
+<pre class="code">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE facedata PUBLIC &quot;-//grimace//DTD facedata 0.1//EN&quot;
+  &quot;http://grimace-project.net/dtd/facedata01.dtd&quot;&gt;
+&lt;facedata&gt;
+  &lt;musclegroup id=&quot;feature&quot; color=&quot;0xd16d00&quot; width=&quot;2&quot; alpha=&quot;0.3&quot; zindex=&quot;0&quot; visible=&quot;false&quot;&gt;
+    &lt;muscle id=&quot;m_lid&quot;&gt;
+      &lt;spline type=&quot;line&quot;&gt;
+        &lt;point x=&quot;107&quot; y=&quot;224&quot;/&gt;
+        &lt;point x=&quot;107&quot; y=&quot;152&quot;/&gt;
+      &lt;/spline&gt;
+    &lt;/muscle&gt;
+  &lt;/musclegroup&gt;
+
+  <span class="comment">&lt;!-- Define an eye --&gt;</span>
+  &lt;feature stroked=&#x27;true&#x27; filled=&#x27;true&#x27; mirrored=&#x27;true&#x27;&gt;
+    &lt;fill&gt;
+      &lt;draw&gt;
+        <span class='comment'>&lt;!-- A set of native drawing commands for the Flash player --&gt;</span>
+        &lt;beginFill color=&quot;0xffffff&quot; alpha=&quot;1&quot; /&gt;
+        &lt;drawCircle x=&quot;84&quot; y=&quot;200&quot; radius=&quot;100&quot; /&gt;
+        &lt;endFill /&gt;
+        &lt;beginFill color=&quot;0xB3D5ED&quot; alpha=&quot;1&quot; /&gt;
+        &lt;drawCircle x=&quot;84&quot; y=&quot;200&quot; radius=&quot;17&quot; /&gt;
+        &lt;endFill /&gt;
+        &lt;lineStyle thickness=&quot;1&quot; color=&quot;0x000000&quot; alpha=&quot;1&quot; /&gt;
+        &lt;beginFill color=&quot;0x000000&quot; alpha=&quot;1&quot; /&gt;
+        &lt;drawCircle x=&quot;84&quot; y=&quot;200&quot; radius=&quot;6&quot; /&gt;
+        &lt;endFill /&gt;
+        <span class="comment">&lt;!-- ... repeat for left eye --&gt;</span>
+      &lt;/draw&gt;
+    &lt;/fill&gt;
+
+    &lt;segment id=&quot;f2&quot; label=&quot;upperlid&quot; color=&quot;0x404040&quot; width=&quot;4&quot; alpha=&quot;1&quot;&gt;
+      <span class="comment">&lt;!-- Define the shape of this segment --&gt;</span>
+      &lt;spline type=&quot;cubicbezier&quot; id=&quot;s2&quot;&gt;
+        <span class="comment">&lt;!-- Entering an ID for a point saves it for later use --&gt;</span>
+        &lt;point id=&quot;end_eye_right&quot; x=&quot;125&quot; y=&quot;205&quot;/&gt;
+        &lt;point x=&quot;105&quot; y=&quot;171&quot;/&gt;
+        &lt;point x=&quot;60&quot;  y=&quot;171&quot;/&gt;
+        &lt;point id=&quot;end_eye_left&quot; x=&quot;43&quot; y=&quot;212&quot;/&gt;
+      &lt;/spline&gt;
+
+      &lt;strokestyle type=&quot;brush&quot;&gt;
+        <span class="comment">&lt;!-- When a StrokeStyle is supplied, the outline is drawn
+        according to the style. Without a style, the outline is
+        stroked with the segment&#x27;s constant thickness. --&gt;</span>
+        &lt;values startwidth=&quot;1&quot; maxwidth=&quot;3&quot; endwidth=&quot;2&quot; color=&quot;0x404040&quot; alpha=&quot;1&quot;/&gt;
+      &lt;/strokestyle&gt;
+
+      <span class="comment">&lt;!-- Define muscle dependencies for this segment
+      This is the upper eye lid. If it opens, the endpoints remain in
+      position while the control points need to be connected to a
+      muscle. Since this is a Cubic Bezier, the control points are nodes
+      number 1 and 2. --&gt;</span>
+      &lt;addmuscle nodenum=&quot;1&quot; group=&quot;feature&quot; muscle=&quot;m_lid&quot; weight=&quot;1&quot; /&gt;
+      &lt;addmuscle nodenum=&quot;2&quot; group=&quot;feature&quot; muscle=&quot;m_lid&quot; weight=&quot;0.67&quot; /&gt;
+    &lt;/segment&gt;
+
+    &lt;segment id=&quot;f3&quot; label=&quot;lowerlid&quot; color=&quot;0x404040&quot; width=&quot;4&quot; alpha=&quot;1&quot;&gt;
+      &lt;spline type=&quot;cubicbezier&quot; id=&quot;s3&quot;&gt;
+        <span class="comment">&lt;!-- Supplying the ref parameter with an ID recalls a point --&gt;</span>
+        &lt;point ref=&quot;end_eye_left&quot;/&gt;
+        &lt;point x=&quot;56&quot;   y=&quot;206&quot;/&gt;
+        &lt;point x=&quot;90&quot;   y=&quot;242&quot;/&gt;
+        &lt;point ref=&quot;end_eye_right&quot;/&gt;
+      &lt;/spline&gt;
+      <span class="comment">&lt;!-- ... --&gt;</span>
+    &lt;/segment&gt;
+  &lt;/feature&gt;
+
+  &lt;emotion id=&quot;e2&quot; label=&quot;surprise&quot;&gt;
+    <span class="comment">&lt;!-- Configures the influence of surprise on muscles.
+    In this example, it only has an influence on muscle m_lid from
+    the group feature.
+    The priority parameter is necessary when several emotions influence
+    the same muscle. --&gt;</span>
+    &lt;addinfluence group=&quot;feature&quot; muscle=&quot;m_lid&quot; priority=&quot;3&quot;&gt;
+      &lt;mapping type=&quot;sine&quot;&gt;
+        &lt;values x0=&quot;0.29&quot; x1=&quot;0.83&quot; y0=&quot;0&quot; y1=&quot;1&quot; /&gt;
+      &lt;/mapping&gt;
+    &lt;/addinfluence&gt;
+    <span class="comment">&lt;!-- ... --&gt;</span>
+  &lt;/emotion&gt;
+
+  <span class="comment">&lt;!-- Add some hair onto this face --&gt;</span>
+  &lt;overlay id=&quot;hair&quot; url=&quot;hairdo.swf&quot; x=&quot;-239&quot; y=&quot;-87&quot; scale=&quot;0.93&quot; alpha=&quot;1&quot;/&gt;
+&lt;/facedata&gt;
+</pre>
+
+
+
+</body>
+</html>

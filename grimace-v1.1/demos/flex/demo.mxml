@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+You can compile this demo like this:
+mxmlc -use-network=false demo.mxml
+Make sure the mxmlc executable is included in your PATH
+-->
+
+<mx:Application 
+    xmlns:mx="http://www.adobe.com/2006/mxml" 
+	layout="absolute"
+
+    creationComplete="creationCompleteHandler();"
+    width="500" height="450"
+ >
+
+    <mx:Script>
+
+        <![CDATA[
+			import flash.display.Loader;
+			import flash.text.TextField;
+		    import flash.text.TextFieldType;
+		    import flash.text.TextFieldAutoSize;
+			import flash.events.Event;
+			import flash.events.MouseEvent;
+			import flash.utils.ByteArray;
+			import flash.system.ApplicationDomain;
+			import flash.system.LoaderContext;
+			import mx.controls.Button;
+			import mx.core.UIComponent;
+
+			public var grimace:*;
+			
+			[Embed(source="../../bin/Grimace.swf", mimeType="application/octet-stream")]
+			private var grimaceClass:Class;
+
+			public function creationCompleteHandler():void {
+				var grimaceBytes:ByteArray = (new grimaceClass() as ByteArray);
+				var ldr:Loader = new Loader();
+				ldr.loadBytes(grimaceBytes, new LoaderContext(false, ApplicationDomain.currentDomain));
+				var scope:* = this;
+				ldr.contentLoaderInfo.addEventListener(Event.COMPLETE, function():void {
+					scope.init(ldr.content);
+				});
+			}
+
+			private function init(grimace:*):void {
+				this.grimace = grimace;
+				
+				var wrapper:UIComponent = new UIComponent();
+				addChild(wrapper);
+				
+				wrapper.addChild(grimace);
+
+				grimace.events.addEventListener('loadComplete', function(e:Event):void {
+					grimace.api.setMaxBounds(300, 0);
+					grimace.api.setPosition(40,20);
+					grimace.api.draw();
+				})
+				
+				grimace.api.loadFacedata(new Array(
+					'head.xml',
+					'features.xml',
+					'wrinkles.xml',
+					'emotions.xml',
+					'overlays.xml'
+				), '../../meta/');
+
+				buildUI();
+			}
+
+			private function buildUI():void {
+				var pos:int = 1;
+
+				var set1Btn:Sprite = createButton('set 1');
+	            addChild(set1Btn);
+				set1Btn.addEventListener(MouseEvent.CLICK, function():void {
+			 		grimace.api.setEmotion({anger:1.0, surprise:0.5}, 0.2);
+				});
+				set1Btn.y = 30 * pos++;
+
+				var set2Btn:Sprite = createButton('set 2');
+	            addChild(set2Btn);
+				set2Btn.addEventListener(MouseEvent.CLICK, function():void {
+			 		grimace.api.setEmotion({joy:1.0, disgust:0.5}, 0.2);
+				});
+				set2Btn.y = 30 * pos++;
+
+				var resetBtn:Sprite = createButton('reset');
+	            addChild(resetBtn);
+				resetBtn.addEventListener(MouseEvent.CLICK, function():void {
+			 		grimace.api.resetEmotion(0.2);
+				});
+				resetBtn.y = 30 * pos++;
+
+			}
+
+			private function createButton(label:String):Button {
+	            var sendBtn:Button = new Button();
+	            sendBtn.x = 380;
+				sendBtn.label = label;
+				return sendBtn;
+			}
+        ]]>
+    </mx:Script>
+</mx:Application>

@@ -1,0 +1,704 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="api.css" type="text/css" media="screen">
+<meta content="ExternalCommands,org.grimace.external.ExternalCommands,capture,draw,getEmotion,getMaxBounds,getPosition,isReady,loadFacedata,resetEmotion,restart,setCaptureUrl,setEmotion,setMaxBounds,setPosition,setScale,setScaleMode" name="keywords">
+<title>Grimace API reference</title>
+</head>
+<body>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">Grimace AsDoc</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?org/grimace/external/ExternalCommands.html&amp;org/grimace/external/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;ExternalCommands</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class ExternalCommands"); titleBar_setSubNav(false,false,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">org.grimace.external</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class ExternalCommands</td>
+</tr>
+</table>
+<p></p>
+   This API exposes methods which allow control of the Grimace component
+  from various programming environments.
+  
+  Currently supported environments are JavaScript, ActionScript 3.0,
+  Flex 3.0 and Flash CS4.
+     
+   <p></p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">
+<a href="embedding.html" target="">How to embed Grimace</a>
+</div>
+<br>
+<hr>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#capture()">capture</a>(format:String = "PNG"):void</div>
+<div class="summaryTableDescription">
+  Captures the currently displayed image and uploads it to a server.</div>
+</td><td class="summaryTableOwnerCol">ExternalCommands</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#draw()">draw</a>():void</div>
+<div class="summaryTableDescription">
+  Forces a redraw.</div>
+</td><td class="summaryTableOwnerCol">ExternalCommands</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getEmotion()">getEmotion</a>():Object</div>
+<div class="summaryTableDescription">
+  Gets the currently displayed emotion state.</div>
+</td><td class="summaryTableOwnerCol">ExternalCommands</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getMaxBounds()">getMaxBounds</a>(scaled:Boolean = true):Object</div>
+<div class="summaryTableDescription">
+  Returns the horizontal and vertical size of the face.</div>
+</td><td class="summaryTableOwnerCol">ExternalCommands</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getPosition()">getPosition</a>():Object</div>
+<div class="summaryTableDescription">
+  Returns the current position of the face.</div>
+</td><td class="summaryTableOwnerCol">ExternalCommands</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#isReady()">isReady</a>():Boolean</div>
+<div class="summaryTableDescription">
+  Returns true if Grimace is ready for commands.</div>
+</td><td class="summaryTableOwnerCol">ExternalCommands</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#loadFacedata()">loadFacedata</a>(urls:Array, urlPrefix:String = ""):void</div>
+<div class="summaryTableDescription">
+  Attempts to load a face description from facedata XML.</div>
+</td><td class="summaryTableOwnerCol">ExternalCommands</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#resetEmotion()">resetEmotion</a>(fadeTime:Number = 0):void</div>
+<div class="summaryTableDescription">
+  Resets the face to a neutral expression.</div>
+</td><td class="summaryTableOwnerCol">ExternalCommands</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#restart()">restart</a>():void</div>
+<div class="summaryTableDescription">
+  Clears active face description and hides the face in preparation
+  for new facedata.</div>
+</td><td class="summaryTableOwnerCol">ExternalCommands</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setCaptureUrl()">setCaptureUrl</a>(url:String):void</div>
+<div class="summaryTableDescription">
+  Defines the URL of the server-side script which handles uploads of
+  captured images.</div>
+</td><td class="summaryTableOwnerCol">ExternalCommands</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setEmotion()">setEmotion</a>(emotionSet:Object, fadeTime:Number = 0):void</div>
+<div class="summaryTableDescription">
+  Defines a new set of emotions to be displayed by grimace.</div>
+</td><td class="summaryTableOwnerCol">ExternalCommands</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setMaxBounds()">setMaxBounds</a>(maxWidth:Number = 0, maxHeight:Number = 0):void</div>
+<div class="summaryTableDescription">
+  Defines a rectangle to fit the face in.</div>
+</td><td class="summaryTableOwnerCol">ExternalCommands</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setPosition()">setPosition</a>(x:Number, y:Number):void</div>
+<div class="summaryTableDescription">
+  Moves the face to the position supplied.</div>
+</td><td class="summaryTableOwnerCol">ExternalCommands</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setScale()">setScale</a>(scale:Number):void</div>
+<div class="summaryTableDescription">
+  Manually sets a factor to proportionally scale the face.</div>
+</td><td class="summaryTableOwnerCol">ExternalCommands</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setScaleMode()">setScaleMode</a>(mode:String = "noScale"):void</div>
+<div class="summaryTableDescription">
+  Sets whether the face should be scaled to fit the container.</div>
+</td><td class="summaryTableOwnerCol">ExternalCommands</td>
+</tr>
+<tr>
+<td colspan="4"><h3>Event related methods</h3></td>	
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#addEventListener()">addEventListener</a>(eventType:String, callback:String):Boolean</div>
+<div class="summaryTableDescription">
+  Registers an event listener.</div>
+</td><td class="summaryTableOwnerCol">JSHandler</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#removeEventListener()">removeEventListener</a>(eventType:String, callback:String):Boolean</div>
+<div class="summaryTableDescription">
+  Removes a previously registered event listener.</div>
+</td><td class="summaryTableOwnerCol">JSHandler</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="capture()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">capture</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function capture(format:String = "PNG"):void</code><p>
+  Captures the currently displayed image and uploads it to a server.
+  
+  </p><p>When the upload is finished, the script returns the URL of the
+  uploaded image, which is then dispatched as Event.</p>
+  
+  <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">format</span>:String</code> (default = "<code>PNG</code>")<code></code> &mdash; Defines the image format. Valid options are PNG and JPG.
+  
+  </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../external/ExternalCommands.html#setCaptureUrl()" target="">setCaptureUrl()</a>
+<br>
+<a href="events.html" target="">Events</a>
+</div>
+</div>
+<a name="draw()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">draw</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function draw():void</code><p>
+  Forces a redraw.
+  
+  </p><p>When a muscle or emotion has changed, the face is re-drawn
+  automatically. An initial manual call of draw is necessary after
+  loading new facedata description.</p>
+  
+  <p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../external/ExternalCommands.html#loadFacedata()" target="">loadFacedata()</a>
+</div>
+</div>
+<a name="getEmotion()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getEmotion</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getEmotion():Object</code><p>
+  Gets the currently displayed emotion state.
+  
+  </p><p>Only active emotions, i.e. emotions with value > 0 are included in the result.</p>
+  
+  <p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Object</code> &mdash; An object containing currently active emotions and their values.
+  
+  </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="emotions.html" target="">Emotion model</a>
+</div>
+</div>
+<a name="getMaxBounds()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getMaxBounds</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getMaxBounds(scaled:Boolean = true):Object</code><p>
+  Returns the horizontal and vertical size of the face.
+  
+  </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">scaled</span>:Boolean</code> (default = <code>true</code>)<code></code> &mdash; If a scale factor by setScale() or setMaxBounds() should be taken into account.
+  
+  </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Object</code> &mdash; An Object containing "width" and "height" in pixels.
+  </td>
+</tr>
+</table>
+</div>
+<a name="getPosition()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getPosition</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getPosition():Object</code><p>
+  Returns the current position of the face.
+  
+  </p><p>The reference point is the upper-left corner of the face's bounding rectangle.</p>
+  
+  <p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Object</code> &mdash; An Object containing the horizontal position "x" and the vertical position "y" in pixels.
+  </td>
+</tr>
+</table>
+</div>
+<a name="isReady()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">isReady</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function isReady():Boolean</code><p>
+  Returns true if Grimace is ready for commands.
+  
+  </p><p>This method can be used to determine if other commands can
+  be yet issued, e.g. registering of event listeners.</p>
+  
+  <p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code> &mdash; Always true.
+  </td>
+</tr>
+</table>
+</div>
+<a name="loadFacedata()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">loadFacedata</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function loadFacedata(urls:Array, urlPrefix:String = ""):void</code><p>
+  Attempts to load a face description from facedata XML.
+  
+  </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">urls</span>:Array</code> &mdash; An array containing absolute or relative paths to the facedata XML files to be loaded.
+
+  </td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">urlPrefix</span>:String</code> (default = <code>""</code>)<code></code> &mdash; A relative path from the embedding script to the Facedata files
+
+  </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="facedataxml.html" target="">Facedata file format</a>
+</div>
+</div>
+<a name="resetEmotion()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">resetEmotion</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function resetEmotion(fadeTime:Number = 0):void</code><p>
+  Resets the face to a neutral expression.
+  
+  </p><p>Convenience method for supplying setEmotion with an empty
+  object.</p>
+  
+  <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">fadeTime</span>:Number</code> (default = <code>0</code>)<code></code> &mdash; The time in seconds to morph the face to the neutral state. 0 displays instantly.
+  
+  </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../external/ExternalCommands.html#setEmotion()" target="">setEmotion()</a>
+<br>
+<a href="emotions.html" target="">Emotion model</a>
+</div>
+</div>
+<a name="restart()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">restart</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function restart():void</code><p>
+  Clears active face description and hides the face in preparation
+  for new facedata.
+  </p></div>
+<a name="setCaptureUrl()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setCaptureUrl</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function setCaptureUrl(url:String):void</code><p>
+  Defines the URL of the server-side script which handles uploads of
+  captured images.
+  
+  </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">url</span>:String</code> &mdash; The URL of the upload script, absolute or relative to grimace.swf
+  
+  </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../external/ExternalCommands.html#capture()" target="">capture()</a>
+</div>
+</div>
+<a name="setEmotion()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setEmotion</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function setEmotion(emotionSet:Object, fadeTime:Number = 0):void</code><p>
+  Defines a new set of emotions to be displayed by grimace.
+  
+  </p><p>A set of emotions consists of one or more emotions with
+  arbitrary values. If more than one emotion is supplied, Grimace
+  attempts to mix them. While no theoretical limit, mixtures of
+  more than two emotions usually produce unintelligible results.</p>
+  
+  <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">emotionSet</span>:Object</code> &mdash; An Object which defines the emotion(s) to be displayed.
+  </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">fadeTime</span>:Number</code> (default = <code>0</code>)<code></code> &mdash; The time in seconds to morph the face to the new emotion. 0 displays instantly.
+  
+  </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="emotions.html" target="">Emotion model</a>
+</div>
+</div>
+<a name="setMaxBounds()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setMaxBounds</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function setMaxBounds(maxWidth:Number = 0, maxHeight:Number = 0):void</code><p>
+  Defines a rectangle to fit the face in.
+  
+  </p><p>The face will be scaled proportionally to fit into the supplied
+  dimensions.</p>
+  
+  <p>This setting overwrites a manual scale factor set by
+  setScale(). It can work in addition to resizing due to scale
+  mode "showAll". If "showAll" is active, the supplied dimensions
+  will be resized by the same factor as the face.</p>
+  
+  <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">maxWidth</span>:Number</code> (default = <code>0</code>)<code></code> &mdash; The maximum width of the face in pixels.
+  </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">maxHeight</span>:Number</code> (default = <code>0</code>)<code></code> &mdash; The maximum height of the face in pixels.
+  </td>
+</tr>
+</table>
+</div>
+<a name="setPosition()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setPosition</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function setPosition(x:Number, y:Number):void</code><p>
+  Moves the face to the position supplied.
+  
+  </p><p>The reference point is the upper-left corner of the face's bounding rectangle.</p>
+  
+  <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">x</span>:Number</code> &mdash; The horizontal distance in pixels from the left edge of the container.
+  </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">y</span>:Number</code> &mdash; The vertical distance in pixels from the top edge of the container.
+  </td>
+</tr>
+</table>
+</div>
+<a name="setScale()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setScale</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function setScale(scale:Number):void</code><p>
+  Manually sets a factor to proportionally scale the face.
+  
+  </p><p>This setting overwrites a scale factor determined by
+  setMaxBounds(). It can work in addition to resizing due to scale
+  mode "showAll".</p>
+  
+  <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">scale</span>:Number</code></td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../external/ExternalCommands.html#setMaxBounds()" target="">setMaxBounds()</a>
+<br>
+<a href="../external/ExternalCommands.html#setScaleMode()" target="">setScaleMode()</a>
+</div>
+</div>
+<a name="setScaleMode()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setScaleMode</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function setScaleMode(mode:String = "noScale"):void</code><p>
+  Sets whether the face should be scaled to fit the container.
+  
+  </p>
+  <p><strong>noScale:</strong> The face will not be scaled to fit the
+  container. Trimming might occur unless the face is manually
+  resized by setScale() or setMaxBounds().</p>
+  
+  <p><strong>showAll:</strong> The face will be scaled proportionally
+  to fit the container. Additional resizing through setScale() or
+  setMaxBounds() is not advised. This option only works in a browser environment. The setting is ignored when Grimace is embedded in an ActionScript environment</p>
+  
+  <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">mode</span>:String</code> (default = "<code>noScale</code>")<code></code> &mdash; The desired scale mode. Valid options: "noScale" and "showAll"
+  
+  </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../external/ExternalCommands.html#setMaxBounds()" target="">setMaxBounds()</a>
+<br>
+<a href="../external/ExternalCommands.html#setScale()" target="">setScale()</a>
+</div>
+</div>
+<a name="addEventListener()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">addEventListener</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function addEventListener(eventType:String, callback:String):Boolean</code><p>
+  Registers an event listener.
+  
+  </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">eventType</span>:String</code> &mdash; Event type to listen to. See event page for available events.
+  </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">callback</span>:String</code> &mdash; Function name to be called when the event is triggered.
+  
+  </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code> &mdash; Returns true if listener was registered successfully.
+  
+  </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="events.html" target="">Events overview</a>
+</div>
+</div>
+<a name="removeEventListener()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">removeEventListener</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function removeEventListener(eventType:String, callback:String):Boolean</code><p>
+  Removes a previously registered event listener.
+  
+  </p><p>Multiple listeners can be registered for one event type. Thus,
+  eventType and callback must be supplied to unregister the
+  corresponding listener.</p>
+  
+  <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">eventType</span>:String</code> &mdash; Event type for which to unregister a listener.
+  </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">callback</span>:String</code> &mdash; Function name for which listener was registered.
+  
+  </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code> &mdash; Returns true if listener was removed successfully.
+  
+  </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="events.html" target="">Events overview</a>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="grimaceweb.css" type="text/css" media="screen">
+<title>Grimace documentation</title>
+</head>
+<body>
+<h1>Events</h1>
+
+Grimace can notify about certain events. In order to be notified, event listeners need to be registered.
+
+<p>An event listener is registered through the <code><a href="api.html#addEventListener()">addEventListener()</a></code> method and deleted through the <code><a href="api.html#removeEventListener()">removeEventListener()</a></code> method.</p>
+
+<p>In ActionScript 3 environments, these methods are accessed via the <code>events</code> property of the Grimace instance.</p>
+
+The demo files for the various platforms show all available events in use.
+
+<h3>Available events</h3>
+<h4>loadComplete</h4>
+<p>Facedata is loaded by the <code><a href="api.html#loadFacedata()">loadFacedata()</a></code> method, which accepts an array of relative or absolute URLs to the Facedata XML files.</p>
+
+<p>When all files have completed loading and Grimace is ready to display the face, this event is triggered. This is the time to resize and position the face and then call the <code><a href="api.html#draw()">draw()</a></code> method.</p>
+
+<h4>emotionSet</h4>
+<p>Whenever the displayed emotion has changed, this event is triggered. If the new emotion was set with <code>fadeTime > 0</code>, the event is triggered when the animation is complete.</p>
+
+<p>The event does not include the new emotion state. Use the <code><a href="api.html#getEmotion()">getEmotion()</a></code> method in the event handler instead.</p>
+
+<h4>captureComplete</h4>
+<p>SWF files are not allowed to write files. To capture a screenshot of the currently displayed face, the file needs to be handled by a server-side script. A sample script (<code>SaveFile.php</code>) is being used by the demos and is included in the distribution.</p>
+
+<p>The location of the server-side script is set via the <code><a href="api.html#setCaptureUrl()">setCaptureUrl()</a></code> method. The <code><a href="api.html#capture()">capture()</a></code> method sends the captured screenshot to the script.</p>
+
+<p>When the upload is complete, the script returns the absolute URL of the uploaded image. This string is retrieved by Grimace and passed on to the embedding environment as the <code>url</code> property of the <code>captureComplete</code> event object.</p>
+
+</body>
+</html>

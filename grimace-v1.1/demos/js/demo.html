@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	
+<!-- 
+Because of Flash security restrictions, this demo must be served by a
+web server and accessed by http://.
+You cannot use the demo from a file:// context.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Grimace</title>
+<link rel="stylesheet" href="demo.css" type="text/css" media="screen" charset="utf-8">
+
+</head>
+<body id="webdeployBody">
+	<div id="browse">
+		<ul id="captures">
+		</ul>
+		<ul id="buttons">
+			<li><h4>Emotions</h4></li>
+			<li>
+				<span class="slidercaption">Joy</span>
+				<div class="slider" id="joy"></div>
+			</li>
+			<li>
+				<span class="slidercaption">Surprise</span>
+				<div class="slider" id="surprise"></div>
+			</li>
+			<li>
+				<span class="slidercaption">Fear</span>
+				<div class="slider" id="fear"></div>
+			</li>
+			<li>
+				<span class="slidercaption">Sadness</span>
+				<div class="slider" id="sadness"></div>
+			</li>
+			<li>
+				<span class="slidercaption">Disgust</span>
+				<div class="slider" id="disgust"></div>
+			</li>
+			<li>
+				<span class="slidercaption">Anger</span>
+				<div class="slider" id="anger"></div>
+			</li>
+			<li><h5 style="margin-bottom:0">Predefined emotions</h5></li>
+			<li>
+				<input type="button" name="set1" value="mild Surprise + strong Anger" id="set1"/>
+			</li>
+			<li>
+				<input type="button" name="set2" value="mild Disgust + strong Joy" id="set2"/>
+			</li>
+			<li>
+				<input type="button" name="reset" value="Neutral" id="reset"/>
+			</li>
+			<li>
+				<input type="button" name="getEmotion" value="Get current emotion" id="getEmotion"/>
+			</li>
+			<li><h4>Functions</h4></li>
+			<li>
+				<input type="button" name="capture" value="Capture screenshot" id="capture"/>
+			</li>
+			<li>
+				<input type="button" name="restart" value="Restart" id="restart"/>
+			</li>
+			<li>
+				<input type="button" name="draw" value="Force redraw" id="draw"/>
+			</li>
+			<li><h4>Position</h4></li>
+			<li>
+				<input type="text" name="posX" value="0" id="posX" size="3"/>
+				<input type="text" name="posY" value="0" id="posY" size="3"/>
+				<input type="button" name="setPos" value="Set position" id="setPos"/>
+			</li>
+			<li>
+				<input type="button" name="getPos" value="Get position" id="getPos"/>
+			</li>
+			<li><h4>Scale mode</h4></li>
+			<li>
+				<input type="radio" value="showAll" name="scaleMode" id="showAll" checked="checked">
+				<label for="showAll">Automatic</label>
+			</li>
+			<li>
+				<input type="radio" value="noScale" name="scaleMode" id="noScale">
+				<label for="noScale">Manual</label>
+			</li>
+			<li id="sizeOptions" style="display:none">
+				<input type="text" name="width" value="200" id="width" size="3"/>
+				<input type="text" name="height" value="200" id="height" size="3"/>
+				<input type="button" name="resize" value="Set max size" id="resize"/><br/>
+				<input type="button" name="getBounds" value="Get current size" id="getBounds"/>
+			</li>
+		</ul>
+		<div id="grimace_wheel">
+			
+		</div>
+		<div id="grimace_wrapper">
+			<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
+				codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0"
+				width="360" height="360" id="Grimace" align="left">
+			<param name="allowScriptAccess" value="sameDomain" />
+			<param name="allowFullScreen" value="false" />
+			<param name="movie" value="../../bin/Grimace.swf" />
+			<param name="quality" value="high" />
+			<param name="bgcolor" value="#ffffff" />
+			<embed src="../../bin/Grimace.swf" quality="high" bgcolor="#ffffff"
+				width="360" height="360" name="Grimace" align="left"
+				allowScriptAccess="sameDomain" allowFullScreen="false"
+				type="application/x-shockwave-flash"
+				pluginspage="http://www.macromedia.com/go/getflashplayer" />
+			</object>
+		</div>
+		<div id="log">
+			
+		</div>
+	</div>
+</body>
+<script src="jquery-1.2.6.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="jquery-ui-personalized-1.5.3.min.js" type="text/javascript" charset="utf-8"></script>
+
+<script src="demo.js" type="text/javascript" charset="utf-8"></script>
+
+
+</html>

@@ -1,0 +1,6 @@
+Version 1.0.1
+	- Fixed minor bug in demo.js: wrong path to SaveFile.php
+Version 1.1 - 2013-03-20
+	- Updated face data
+	- New API method loadFromXML allows loading directly from XML objects
+	- Facemap can save muscle tensions to clipboard

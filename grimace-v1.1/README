@@ -1,0 +1,50 @@
+Grimace system
+Version 1.01
+(C) 2009 Grimace team
+
+In this download package you'll find everything you need to get started with Grimace. Start to play around by opening up the demo for your desired platform.
+
+You can give us a shout or ask for help at grimaceproject@gmail.com.
+
+
+=== Package outline ===
+
+bin/
+	grimace.swf The core component which needs to be embedded.
+	facemap.swf Standalone application which assists in face development.
+
+meta/ Contains face description files and graphics to be used as overlays.
+
+docs/ Documentation, also online at http://grimace-project.net/documentation
+
+demos/ Demo source files and project files for embedding Grimace.
+	js/    IE 6.0+, Firefox 2+, Safari 3.0+, Opera 9.0+
+	as3/   mxmlc compiler from the free Flex 3 SDK.
+	flex/  Flex Builder or mxmlc compiler from the free Flex 3 SDK.
+	flash/ Flash CS4. Support for CS3 is not possible.
+	
+SaveFile.php Server-side script for screenshot/capture functionality.
+
+
+=== License ===
+
+The Grimace System is free for personal use.
+
+You are free to ...
+- share it, copy it, distribute it.
+- adapt it to your liking.
+
+under the following conditions:
+- You must at least mention us as the original authors.
+- If you alter any part of it you have to share it under the same conditions as the original work.
+
+If you want to use Grimace in a commercial context please contact us at grimaceproject@gmail.com and ask for permission.
+
+Grimace by Grimace team is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License.
+Permissions beyond the scope of this license may be available at http://grimace-project.net/license.
+
+
+==== Version history ====
+
+1.0.1	2009-03-01	Sunday, the 1st: Minor bugfix
+1.0	2009-02-13	Friday, the 13th: Initial release
