@@ -8,28 +8,25 @@
         function drawChart() {
         var data = new google.visualization.DataTable();
 
-      data.addColumn('string', 'ID');
-      data.addColumn('date',   'date');
-
+        data.addColumn('string', 'ID');
+        data.addColumn('date',   'date');
         data.addColumn('number', 'Happiness');
         data.addColumn('number', 'Surprise');
         data.addColumn('number', 'Fear');
         data.addColumn('number', 'Sadness');
         data.addColumn('number', 'Disgust');
         data.addColumn('number', 'Anger');
-
         data.addColumn('number', 'Happiness_So_Far');
         data.addColumn('number', 'Surprise_So_Far');
         data.addColumn('number', 'Fear_So_Far');
         data.addColumn('number', 'Sadness_So_Far');
         data.addColumn('number', 'Disgust_So_Far');
         data.addColumn('number', 'Anger_So_Far');
-
         data.addColumn('number', 'Temperature');
         data.addColumn('number', 'Lattitude');
         data.addColumn('number', 'Longitude');
 
-            data.addRows([
+data.addRows([
 
           ['You',new Date('2014-07-13'),4.125,0.000490436,0.000245218,0.001,0.001226091,0.002206964,4.146885728,0.080922021,0.056400196,0.086316822,0.187591957,0.588769004,16,57.13121,-2.082261],
           ['You',new Date('2014-07-14'),3.916666667,0.000733496,,,0.000244499,0.00195599,4.146210269,0.081418093,0.056234719,0.08606357,0.187286064,0.588997555,14,57.098381,-2.1724],
