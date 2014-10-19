@@ -263,7 +263,7 @@ function initButtons() {
 		grimace.addEventListener('emotionSet', 'onEmotionSet');
 		//grimace.resetEmotion(0.3); //NEUTRAL
 		
-		grimace.setEmotion({anger:Math.random(), surprise:Math.random()}, 0.3);
+		grimace.setEmotion({anger:Math.round(Math.random()*100)/100, surprise:Math.round(Math.random()*100)/100}, 0.3);
 
 	//	var r=Math.random();
 	//	grimace.setEmotion({r, 1-r}, 0.3);
