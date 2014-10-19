@@ -371,7 +371,29 @@ function log2(emotions,ps,mysession,lx,ly){
 
     var stts = document.getElementById("status");
     stts.value = serverResponse;
+
+
+/*
+//WEATHER code
+$(document).ready(function(){	
+	api_key = 'e85f3f8fd1abe66f'; //http://api.wunderground.com
+	weather_getData();
+});
+*/
 }
+
+function weather_getData(){
+  $.ajax({
+	url: 'http://api.wunderground.com/api/e85f3f8fd1abe66f/forecast/q/37.776289,-122.395234.json',
+    dataType: "json",
+    success: weather_displayResults
+  });
+}
+function weather_displayResults(data) {
+	alert("Temperature: " + current_observation.estimated.temp_c);
+}
+
+
 
 
 function log(msg) {
