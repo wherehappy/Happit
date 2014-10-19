@@ -275,9 +275,8 @@ function initButtons() {
         set2.onclick = function() {
                 //grimace.addEventListener('emotionSet', 'onUnameSet');
 		var uname = document.getElementById('uname');
-
                 mysession.uname=uname.value;
-//var uname = document.getElementById('uname');
+		//var uname = document.getElementById('uname');
         }
         if (set2.captureEvents) set2.captureEvents(Event.CLICK);
 
@@ -314,14 +313,14 @@ function initButtons() {
 		if(!outpairs)
 			outpairs="&";
 
- var locxel = document.getElementById("locx");
-       var locyel = document.getElementById("locy");
-        //locxel.value=position.coords.latitude +"";
-        //locyel.value=position.coords.longitude +"";		
-lx=locxel.value;
-ly=locxel.value;
+		 var locxel = document.getElementById("locx");
+       		var locyel = document.getElementById("locy");
+        	//locxel.value=position.coords.latitude +"";
+        	//locyel.value=position.coords.longitude +"";		
+		lx=locxel.value;
+		ly=locxel.value;
 
-//mysession.q="2";
+		//mysession.q="2";
 		log2(emotion,outpairs,mysession,lx,ly);
 	// ******************************
 	}
@@ -354,16 +353,24 @@ function log2(emotions,ps,mysession,lx,ly){
     var ss;
     //ss="un="+mysession.uname;
     ss="un="+uname+"&";
-ls="locx="+lx+"&locy="+ly+"&";
+
+
+    // grimace.setEmotion({anger:Math.random(), surprise:Math.random()}, 0.3);
+
+
+    ls="locx="+lx+"&locy="+ly+"&";
 
     var xhReq = new XMLHttpRequest();
     xhReq.open("GET", "se.php?"+ss+ps+ls, false); //eubmit emotion
 
     xhReq.send(null);
     var serverResponse = xhReq.responseText;
-    alert(ps+" "+serverResponse); // Shows "15"
+//    alert(ps+" "+serverResponse); // Shows "15"
     //
     //document.getElementById('log').innerHTML = msg;
+
+    var stts = document.getElementById("status");
+    stts.value = serverResponse;
 }
 
 
@@ -382,6 +389,9 @@ sliders.init();
 initListeners();
 
 initButtons();
+
+// grimace.setEmotion({anger:Math.random(), surprise:Math.random()}, 0.3);
+
 
 if (document.location.toString().indexOf('file://') != -1) {
  	alert('Because of Flash security restrictions, this demo must be served by a web server and accessed by http://. You cannot use the demo from a file:// context.');

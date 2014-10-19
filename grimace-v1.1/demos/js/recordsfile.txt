@@ -6,3 +6,13 @@ EMOTIONS  un=nima&&
 EMOTIONS  un=nima&E_surprise=0.9&E_joy=0.67&
 EMOTIONS  un=nima&E_surprise=0.9&E_fear=0.53&
 EMOTIONS  un=nima&E_fear=1&locx=52.4511295&locy=52.4511295
+EMOTIONS  un=nima&E_disgust=0.39&E_anger=1&locx=&locy=&
+EMOTIONS  un=nima&E_disgust=0.66&locx=52.4510553&locy=52.4510553&
+EMOTIONS  un=nima&E_disgust=0.66&locx=52.4510553&locy=52.4510553&
+EMOTIONS  un=nima&&locx=&locy=&
+EMOTIONS  un=nima&E_sadness=1&locx=&locy=&
+EMOTIONS  un=nima&E_sadness=1&locx=55.8492493&locy=55.8492493&
+EMOTIONS  un=nima&E_surprise=0.64&locx=&locy=&
+EMOTIONS  un=nima&E_surprise=0.55&locx=52.451043399999996&locy=52.451043399999996&
+EMOTIONS  un=nima&E_fear=0.45&locx=52.4510353&locy=52.4510353&
+EMOTIONS  un=nima&E_surprise=0.43&locx=51.5024844&locy=51.5024844&
