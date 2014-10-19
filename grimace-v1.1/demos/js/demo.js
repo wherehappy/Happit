@@ -313,9 +313,16 @@ function initButtons() {
 		}
 		if(!outpairs)
 			outpairs="&";
-		
-mysession.q="2";
-		log2(emotion,outpairs,mysession);
+
+ var locxel = document.getElementById("locx");
+       var locyel = document.getElementById("locy");
+        //locxel.value=position.coords.latitude +"";
+        //locyel.value=position.coords.longitude +"";		
+lx=locxel.value;
+ly=locxel.value;
+
+//mysession.q="2";
+		log2(emotion,outpairs,mysession,lx,ly);
 	// ******************************
 	}
 	if (getEmotion.captureEvents) getEmotion.captureEvents(Event.CLICK);
@@ -342,53 +349,28 @@ mysession.q="2";
 	if (noScale.captureEvents) noScale.captureEvents(Event.CLICK);	
 }
 
-function log2(emotions,ps,mysession){
+function log2(emotions,ps,mysession,lx,ly){
+    var uname = document.getElementById('uname').value;
+    var ss;
+    //ss="un="+mysession.uname;
+    ss="un="+uname+"&";
+ls="locx="+lx+"&locy="+ly+"&";
 
- var uname = document.getElementById('uname').value;
+    var xhReq = new XMLHttpRequest();
+    xhReq.open("GET", "se.php?"+ss+ps+ls, false); //eubmit emotion
 
-var ss;
-//ss="un="+mysession.uname;
-ss="un="+uname+"&";
- var xhReq = new XMLHttpRequest();
- xhReq.open("GET", "se.php?"+ss+ps, false); //eubmit emotion
-
-xhReq.send(null);
- var serverResponse = xhReq.responseText;
- alert(ps+" "+serverResponse); // Shows "15"
-//
-
+    xhReq.send(null);
+    var serverResponse = xhReq.responseText;
+    alert(ps+" "+serverResponse); // Shows "15"
+    //
+    //document.getElementById('log').innerHTML = msg;
 }
 
 
-
-
-
 function log(msg) {
-	document.getElementById('log').innerHTML = msg;
-
-
- var xhReq = new XMLHttpRequest();
- xhReq.open("GET", "sumGet.phtml?figure1=5&figure2=10", false);
-
-//var str = encodeURIComponent(key) + '=' + encodeURIComponent(parameters[key]);
-
+// var str = encodeURIComponent(key) + '=' + encodeURIComponent(parameters[key]);
 // xhReq.open("GET", "sumGet.phtml?figure1=5&figure2=10", false);
- xhReq.send(null);
- var serverResponse = xhReq.responseText;
- alert(serverResponse); // Shows "15"
- var serverResponse = xhReq.responseText;
- alert(serverResponse); // Shows "15"
-
-
-/*
- xmlhttp = new XMLHttpRequest();
-//xmlhttp.onreadystatechange = ...
- xmlhttp.open("GET", "ajax_info.txt", true);
-    xmlhttp.send();
-
-
-	alert(msg);
-*/	
+// xhReq.send(null);
 }
 
 

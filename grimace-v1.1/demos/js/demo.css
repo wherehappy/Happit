@@ -3,7 +3,7 @@ body {
 	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 img {
-	border:none;
+	border:1; none;
 }
 #reset_button {
 	position:absolute;
