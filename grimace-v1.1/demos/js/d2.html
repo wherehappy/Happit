@@ -32,7 +32,10 @@ You cannot use the demo from a file:// context.
 
 
 <body id="webdeployBody"   onload="getLocation()" >
+<center> <img src="/happit/Happit/pix/left.jpg" width=90 />
+&nbsp;
 <img src="/happit/Happit/pix/Happit.png"/>
+<img src="/happit/Happit/pix/right.jpg" width=90/></center>
 <p id="Locdemo">Click the button to update your coordinates:</p>
 
 <script>
@@ -62,12 +65,12 @@ function showPosition(position) {
 
 <!--<button onclick="getLocation()">Update location</button>-->
 
-	<div id="browse">
+	<div id="browse" dir=lt2>
 		<ul id="captures">
 		</ul>
 		<ul id="buttons">
 			<li> Hello  
-<input type="input" name="uname" value="nima" id="uname"/> 
+<input type="input" name="uname" value="nima" id="uname" size=7 /> 
 <button onclick="getLocation()">UpdateLoc</button>
 @
 <input type="input" name="locx" value="" id="locx" style="width:30px;"
@@ -130,7 +133,7 @@ style="height:50px;"
 			<li>
 				<input type="button" name="getPos" value="Get position" id="getPos"/>
 			</li>
-
+</ul><ul>
 			<li><h4>Scale mode</h4></li>
 			<li>
 				<input type="radio" value="showAll" name="scaleMode" id="showAll" checked="checked">
