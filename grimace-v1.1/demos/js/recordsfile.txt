@@ -1,8 +1,0 @@
-EMOTIONS  un=nima&&
-EMOTIONS  un=nima&E_joy=0.59&
-EMOTIONS  un=nima&E_joy=0.45&
-EMOTIONS  un=nima&&
-EMOTIONS  un=nima&&
-EMOTIONS  un=nima&E_surprise=0.9&E_joy=0.67&
-EMOTIONS  un=nima&E_surprise=0.9&E_fear=0.53&
-EMOTIONS  un=nima&E_fear=1&locx=52.4511295&locy=52.4511295

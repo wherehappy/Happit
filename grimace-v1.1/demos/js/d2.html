@@ -33,7 +33,7 @@ You cannot use the demo from a file:// context.
 
 
 
-<body id="webdeployBody"   onload="getLocation()" 
+<body id="webdeployBody"   onload="getLocation();" 
 style="background-color: #fff;"
 >
 <center> 
@@ -54,6 +54,7 @@ function getLocation() {
     } else {
         x.innerHTML = "Geolocation is not supported by this browser.";
     }
+    reset.onclick();
 }
 
 function showPosition(position) {
@@ -73,16 +74,21 @@ function showPosition(position) {
 
 <!--<button onclick="getLocation()">Update location</button>-->
 
-<div  class="container" style="background-color: #b0c4de;">
+<div  class="container" style="background-color: #f3f3f3; #b0c4de;">
 Hello
 <input type="input" name="uname" value="nima" id="uname" size=7 />
-<button onclick="getLocation()">UpdateLoc</button>
+<!--<button onclick="getLocation()">UpdateLoc</button>-->
 @
-<input type="input" name="locx" value="" id="locx" style="width:30px;"
-/>x<input type="input" name="locy" value="" id="locy" style="width:30px;"
-/>
+<input type="input" name="locx" value="" id="locx" style="width:30px;text-align:right;" align="right"
+/>x<input type="input" name="locy" value="" id="locy" style="width:30px;text-align:right;"  align="right" />
+<button onclick="getLocation()">UpdateLoc</button>
+<!-- <input type="input" name="status" value="" id="status" /> -->
+
 </div>
-<table><tr><td>
+<table><tr valign="top"><td>
+
+<div id="grimace_wheel">
+                </div>
      <div id="grimace_wrapper" style="width:100px; background-color:#eeffee;">
 &nbsp;
                         <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
@@ -120,7 +126,7 @@ Hello
 />
  </li>
 -->
-			<li><h4>What is your emotion?</h4></li>
+			<li><h4>How do you feel?</h4></li>
 			<li>
 				<span class="slidercaption">Joy</span>
 				<div class="slider" id="joy"></div>
@@ -147,10 +153,11 @@ Hello
 			</li>
 
 <li>
-<input type="button" name="getEmotion" value="I feel like this" id="getEmotion" 
-style="height:50px;"
-/>
-              
+<div style="text-align:right;">
+<input type="button" name="getEmotion" value="I feel like this" id="getEmotion"   style="height:50px;" />
+<br/>
+<input type="input" name="status" value="" id="status" style="height:32px;"/>
+</div>
 </li>
 </ul>
 </div>
@@ -183,7 +190,7 @@ style="height:50px;"
 			</li>
 </ul>
 </div>
-<div style="width:20; background-color: #f0f4de;"    style="visibility:collapse">
+<div style="width:20; background-color: #f0f4de;visibility:collapse;">
 <ul>
 			<li><h4>Scale mode</h4></li>
 			<li>
@@ -204,9 +211,10 @@ style="height:50px;"
 		</ul>
 </div>
 
+<!--
 		<div id="grimace_wheel">
 		</div>
-<!--		<div id="grimace_wrapper">
+		<div id="grimace_wrapper">
 WRAPPER
 			<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
 				codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0"
@@ -224,12 +232,10 @@ WRAPPER
 			</object>
 		</div>
 -->
-		<div id="log">
-LOG
-		</div>
+		<div id="log">		</div>
 
 
-<p><small><small>(C) Happit (Nima,Sohail,Tanja,Bahador), (C) Grimace.</small></small></p>
+<p><small><small>(c)2014 Happit (Nima,Sohail,Tanja,Bahador), (c)2013 Grimace.</small></small></p>
 
 
 </body>

@@ -57,7 +57,12 @@ function onLoadComplete() {
 	document.getElementById('grimace_wheel').style.backgroundImage = 'none';
 	grimace.setPosition(0,0);
 	grimace.setScaleMode("showAll");
+
+// grimace.setEmotion({anger:Math.random(), surprise:Math.random()}, 0.3);
+
 	grimace.draw();
+
+
 }
 
 function onCaptureComplete(e) {
@@ -275,9 +280,8 @@ function initButtons() {
         set2.onclick = function() {
                 //grimace.addEventListener('emotionSet', 'onUnameSet');
 		var uname = document.getElementById('uname');
-
                 mysession.uname=uname.value;
-//var uname = document.getElementById('uname');
+		//var uname = document.getElementById('uname');
         }
         if (set2.captureEvents) set2.captureEvents(Event.CLICK);
 
@@ -314,16 +318,21 @@ function initButtons() {
 		if(!outpairs)
 			outpairs="&";
 
- var locxel = document.getElementById("locx");
-       var locyel = document.getElementById("locy");
-        //locxel.value=position.coords.latitude +"";
-        //locyel.value=position.coords.longitude +"";		
-lx=locxel.value;
-ly=locxel.value;
+		 var locxel = document.getElementById("locx");
+       		var locyel = document.getElementById("locy");
+        	//locxel.value=position.coords.latitude +"";
+        	//locyel.value=position.coords.longitude +"";		
+		lx=locxel.value;
+		ly=locxel.value;
 
-//mysession.q="2";
+		//mysession.q="2";
 		log2(emotion,outpairs,mysession,lx,ly);
-	// ******************************
+
+		//  grimace.setEmotion({joy:1.0, disgust:0.5}, 0.3);
+
+		//reset.onclick(); //randomize
+
+		// ******************************
 	}
 	if (getEmotion.captureEvents) getEmotion.captureEvents(Event.CLICK);
 	
@@ -347,6 +356,14 @@ ly=locxel.value;
 		document.getElementById('sizeOptions').style.display = 'block';
 	}
 	if (noScale.captureEvents) noScale.captureEvents(Event.CLICK);	
+
+//reset.onclick(); //randomize
+
+
+
+
+
+
 }
 
 function log2(emotions,ps,mysession,lx,ly){
@@ -354,17 +371,47 @@ function log2(emotions,ps,mysession,lx,ly){
     var ss;
     //ss="un="+mysession.uname;
     ss="un="+uname+"&";
-ls="locx="+lx+"&locy="+ly+"&";
+
+
+    // grimace.setEmotion({anger:Math.random(), surprise:Math.random()}, 0.3);
+
+
+    ls="locx="+lx+"&locy="+ly+"&";
 
     var xhReq = new XMLHttpRequest();
     xhReq.open("GET", "se.php?"+ss+ps+ls, false); //eubmit emotion
 
     xhReq.send(null);
     var serverResponse = xhReq.responseText;
-    alert(ps+" "+serverResponse); // Shows "15"
+//    alert(ps+" "+serverResponse); // Shows "15"
     //
     //document.getElementById('log').innerHTML = msg;
+
+    var stts = document.getElementById("status");
+    stts.value = serverResponse;
+
+
+/*
+//WEATHER code
+$(document).ready(function(){	
+	api_key = 'e85f3f8fd1abe66f'; //http://api.wunderground.com
+	weather_getData();
+});
+*/
 }
+
+function weather_getData(){
+  $.ajax({
+	url: 'http://api.wunderground.com/api/e85f3f8fd1abe66f/forecast/q/37.776289,-122.395234.json',
+    dataType: "json",
+    success: weather_displayResults
+  });
+}
+function weather_displayResults(data) {
+	alert("Temperature: " + current_observation.estimated.temp_c);
+}
+
+
 
 
 function log(msg) {
@@ -382,6 +429,12 @@ sliders.init();
 initListeners();
 
 initButtons();
+
+// grimace.setEmotion({anger:Math.random(), surprise:Math.random()}, 0.3);
+
+//reset.onclick(); //randomize
+
+
 
 if (document.location.toString().indexOf('file://') != -1) {
  	alert('Because of Flash security restrictions, this demo must be served by a web server and accessed by http://. You cannot use the demo from a file:// context.');
