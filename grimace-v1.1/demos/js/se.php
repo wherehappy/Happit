@@ -20,7 +20,7 @@ echo '+++';
 */
 
 
-$myFile = "./recordsfile.txt";
+$myFile = "./recordsfile.html";
 //echo '(' . $myFile . ')';
 
 $fh = fopen($myFile, 'a');

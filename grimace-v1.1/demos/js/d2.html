@@ -33,7 +33,7 @@ You cannot use the demo from a file:// context.
 
 
 
-<body id="webdeployBody"   onload="getLocation()" 
+<body id="webdeployBody"   onload="getLocation();" 
 style="background-color: #fff;"
 >
 <center> 
@@ -54,6 +54,7 @@ function getLocation() {
     } else {
         x.innerHTML = "Geolocation is not supported by this browser.";
     }
+    reset.onclick();
 }
 
 function showPosition(position) {
@@ -78,8 +79,8 @@ Hello
 <input type="input" name="uname" value="nima" id="uname" size=7 />
 <!--<button onclick="getLocation()">UpdateLoc</button>-->
 @
-<input type="input" name="locx" value="" id="locx" style="width:30px;" 
-/>x<input type="input" name="locy" value="" id="locy" style="width:30px;"  />
+<input type="input" name="locx" value="" id="locx" style="width:30px;text-align:right;" align="right"
+/>x<input type="input" name="locy" value="" id="locy" style="width:30px;text-align:right;"  align="right" />
 <button onclick="getLocation()">UpdateLoc</button>
 <!-- <input type="input" name="status" value="" id="status" /> -->
 

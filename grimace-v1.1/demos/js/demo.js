@@ -57,7 +57,12 @@ function onLoadComplete() {
 	document.getElementById('grimace_wheel').style.backgroundImage = 'none';
 	grimace.setPosition(0,0);
 	grimace.setScaleMode("showAll");
+
+// grimace.setEmotion({anger:Math.random(), surprise:Math.random()}, 0.3);
+
 	grimace.draw();
+
+
 }
 
 function onCaptureComplete(e) {
@@ -322,7 +327,12 @@ function initButtons() {
 
 		//mysession.q="2";
 		log2(emotion,outpairs,mysession,lx,ly);
-	// ******************************
+
+		//  grimace.setEmotion({joy:1.0, disgust:0.5}, 0.3);
+
+		//reset.onclick(); //randomize
+
+		// ******************************
 	}
 	if (getEmotion.captureEvents) getEmotion.captureEvents(Event.CLICK);
 	
@@ -346,6 +356,14 @@ function initButtons() {
 		document.getElementById('sizeOptions').style.display = 'block';
 	}
 	if (noScale.captureEvents) noScale.captureEvents(Event.CLICK);	
+
+//reset.onclick(); //randomize
+
+
+
+
+
+
 }
 
 function log2(emotions,ps,mysession,lx,ly){
@@ -413,6 +431,9 @@ initListeners();
 initButtons();
 
 // grimace.setEmotion({anger:Math.random(), surprise:Math.random()}, 0.3);
+
+//reset.onclick(); //randomize
+
 
 
 if (document.location.toString().indexOf('file://') != -1) {
