@@ -8,8 +8,8 @@
         function drawChart() {
         var data = new google.visualization.DataTable();
 
-      data.addColumn('string', 'Name');
-      data.addColumn('date',   'Date');
+      data.addColumn('string', 'ID');
+      data.addColumn('date',   'date');
 
         data.addColumn('number', 'Happiness');
         data.addColumn('number', 'Surprise');
@@ -25,11 +25,11 @@
         data.addColumn('number', 'Disgust_So_Far');
         data.addColumn('number', 'Anger_So_Far');
 
-        data.addColumn('number', 'Temperature (c)');
-        data.addColumn('number', 'Lat');
-        data.addColumn('number', 'Long');
+        data.addColumn('number', 'Temperature');
+        data.addColumn('number', 'Lattitude');
+        data.addColumn('number', 'Longitude');
 
-      data.addRows([
+            data.addRows([
 
           ['You',new Date('2014-07-13'),4.125,0.000490436,0.000245218,0.001,0.001226091,0.002206964,4.146885728,0.080922021,0.056400196,0.086316822,0.187591957,0.588769004,16,57.13121,-2.082261],
           ['You',new Date('2014-07-14'),3.916666667,0.000733496,,,0.000244499,0.00195599,4.146210269,0.081418093,0.056234719,0.08606357,0.187286064,0.588997555,14,57.098381,-2.1724],
@@ -581,29 +581,22 @@
           ['Marthe',new Date('2014-08-02'),3.666666667,8.57E-05,5.14E-05,5.14E-05,0.000154205,0.00022274,4.267716401,0.054571311,0.036477966,0.103831129,0.1969022,0.608217394,4,51.304967,-0.150067],
 
   ]);
-      var motionchart = new google.visualization.MotionChart(
-          document.getElementById('personal'));
-      var options ={}
-            options['state'] = '{}';
-            options['width'] = 1000;
-            options['height'] = 700;
-            motionchart.draw(data, options);
-    }
-google.setOnLoadCallback(drawVisualization);
-</script>
 
 
-</head>
-<body>
+                var options = {}
+                options['state'] = '{"iconType":"BUBBLE","dimensions":{"iconDimensions":["dim0"]},"xAxisOption":"10","yZoomedDataMin":-656,"uniColorForNonSelected":false,"sizeOption":"2","showTrails":true,"yLambda":0,"yZoomedIn":false,"xZoomedDataMax":801083,"orderedByY":false,"iconKeySettings":[],"duration":{"multiplier":1,"timeUnit":"D"},"nonSelectedAlpha":0.4,"xZoomedDataMin":5,"colorOption":"3","time":"2014-07-09","yZoomedDataMax":47543,"playDuration":15000,"yAxisOption":"51","xZoomedIn":false,"xLambda":0,"orderedByX":false}';
+                options['width'] = 1000;
+                options['height'] = 700;
+
+                var chart = new google.visualization.MotionChart(document.getElementById('personal'));
 
 
+                chart.draw(data, options);
+                }
+                </script>
+                </head>
 
-<h2>Your Happiness Diary:</h2><br>
-
-    <div id="personal" style="width: 1000px; height: 700px;"></div>
-
-</body>
-</html>
-
-
-
+                <body><h1>Your Personal Diary</h1>
+                <div id="personal" style="width: 800px; height: 600px;"></div>
+                </body>
+                </html>
