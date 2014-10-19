@@ -314,6 +314,7 @@ function initButtons() {
 		if(!outpairs)
 			outpairs="&";
 		
+mysession.q="2";
 		log2(emotion,outpairs,mysession);
 	// ******************************
 	}
