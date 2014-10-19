@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
   <meta http-equiv="content-type" content="textstart/html; charset=utf-8" />
   <title>Happ it!</title>
-  <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
-<!-- start motion chart -->
+
+
   <script type="text/javascript">
-     google.load('visualization', '1', {packages: ['motionchart']});
-    function drawVisualization() {
-      var data = new google.visualization.DataTable();
+
+  google.load('visualization', '1', {'packages':['motionchart']});
+  google.setOnLoadCallback(drawChart);
+  function drawChart() {
+  var data = new google.visualization.DataTable();
       data.addColumn('string', 'Name');
       data.addColumn('date',   'Date');
 
@@ -593,7 +596,6 @@
     }
 google.setOnLoadCallback(drawVisualization);
 </script>
-    <!-- end hourly motion chart -->
 
 
 </head>
