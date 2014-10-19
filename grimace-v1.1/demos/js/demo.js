@@ -262,9 +262,10 @@ function initButtons() {
 	reset.onclick = function() {
 		grimace.addEventListener('emotionSet', 'onEmotionSet');
 		//grimace.resetEmotion(0.3); //NEUTRAL
-		
-		grimace.setEmotion({anger:Math.round(Math.random()*100)/100/2, surprise:Math.round(Math.random()*100)/100}, 0.3);
 
+if(grimace){		
+		grimace.setEmotion({anger:Math.round(Math.random()*100)/100/2, surprise:Math.round(Math.random()*100)/100}, 0.3);
+}
 	//	var r=Math.random();
 	//	grimace.setEmotion({r, 1-r}, 0.3);
 
@@ -436,10 +437,10 @@ initButtons();
 
 
 
-if (document.location.toString().indexOf('file://') != -1) {
- 	alert('Because of Flash security restrictions, this demo must be served by a web server and accessed by http://. You cannot use the demo from a file:// context.');
-}
-else {
+//if (document.location.toString().indexOf('file://') != -1) {
+// 	alert('Because of Flash security restrictions, this demo must be served by a web server and accessed by http://. You cannot use the demo from a file:// context.');
+//}
+//else {
 	loadFacedata();
-}
+//}
 
