@@ -125,8 +125,8 @@ if __name__ == '__main__':
     elif sys.argv >= 2:
         csvfile = open(sys.argv[1], "r")
     else:
-        print("Exmample: cat file.csv | ./csv2mothionchart.py > personal.html", file=sys.stderr)
-        print("Or: ./csv2mothionchart.py file.csv > motionchart.html", file=sys.stderr)
+        print("Exmample: cat file.csv | ./csv2motonchart.py > personal.html", file=sys.stderr)
+        print("Or: ./csv2motionchart.py file.csv > motionchart.html", file=sys.stderr)
         sys.exit(1)
 
     title = "personal"
