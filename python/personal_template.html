@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content="textstart/html; charset=utf-8" />
+  <title>Happ it!</title>
+  <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+
+<!-- start motion chart -->
+  <script type="text/javascript">
+     google.load('visualization', '1', {packages: ['motionchart']});
+    function drawVisualization() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Name');
+      data.addColumn('date',   'Date');
+        Name,date,Happiness,Surprise,Fear,Sadness,Disgust,Anger,Happiness_So_Far,Surprise_So_Far,Fear_So_Far,Sadness_So_Far,Disgust_So_Far,Anger_So_Far,Weather
+
+        data.addColumn('number', 'Happiness');
+        data.addColumn('number', 'Surprise');
+        data.addColumn('number', 'Fear');
+        data.addColumn('number', 'Sadness');
+        data.addColumn('number', 'Disgust');
+        data.addColumn('number', 'Anger');
+
+        data.addColumn('number', 'Happiness_So_Far');
+        data.addColumn('number', 'Surprise_So_Far');
+        data.addColumn('number', 'Fear_So_Far');
+        data.addColumn('number', 'Sadness_So_Far');
+        data.addColumn('number', 'Disgust_So_Far');
+        data.addColumn('number', 'Anger_So_Far');
+
+        data.addColumn('number', 'Temperature (c)');
+        data.addColumn('number', 'Lat');
+        data.addColumn('number', 'Long');
+
+      data.addRows([
+
+      [*datahere*]
+
+
+  ]);
+      var motionchart = new google.visualization.MotionChart(
+          document.getElementById('personal'));
+      var options ={}
+            options['state'] = '{"yZoomedDataMin":4,"yLambda":1,"dimensions":{"iconDimensions":["dim0"]},"colorOption":"34","yZoomedDataMax":17458500,"xZoomedDataMin":0,"sizeOption":"2","orderedByY":false,"duration":{"multiplier":1,"timeUnit":"D"},"iconKeySettings":[],"playDuration":15000,"uniColorForNonSelected":false,"yAxisOption":"3","orderedByX":false,"xZoomedIn":false,"xAxisOption":"_ALPHABETICAL","iconType":"BUBBLE","showTrails":false,"xLambda":1,"yZoomedIn":false,"xZoomedDataMax":216,"nonSelectedAlpha":0.4}';
+            options['width'] = 1000;
+            options['height'] = 700;
+            motionchart.draw(data, options);
+    }
+google.setOnLoadCallback(drawVisualization);
+</script>
+    <!-- end hourly motion chart -->
+
+
+</head>
+<body>
+
+<h2>Overview Bubble Charts:</h2><br>
+
+    <h3>Daily:</h3>
+    <br>
+    <div id="personal" style="width: 1000px; height: 700px;"></div>
+
+</body>
+</html>
+
+
+

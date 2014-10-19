@@ -1,6 +1,88 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content="textstart/html; charset=utf-8" />
+  <title>Zedge&#153;&#32;WITAMIN</title>
+  <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+
+
+
+
+<!-- start daily motion chart -->
+  <script type="text/javascript">
+     google.load('visualization', '1', {packages: ['motionchart']});
+    function drawVisualization() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Subgroup');
+      data.addColumn('date',   'Date');
+
+        data.addColumn('number', 'Daily Traffic User [DTU]');
+        data.addColumn('number', 'Daily Active User [DAU]');
+        data.addColumn('number', 'Engagement [DTU/DAU]');
+        data.addColumn('number', 'Engagement [log(DTU/DAU)]');
+        data.addColumn('number', 'Engagement [1/Gamma1_DU]');
+        data.addColumn('number', 'Engagement [1/Gamma2_DU]');
+        data.addColumn('number', 'Engagement [Mu_DU]');
+        data.addColumn('number', 'Engagement [Sigma_DU]');
+
+        data.addColumn('number', 'Daily Traffic User [DTU-GEO]');
+
+        data.addColumn('number', 'Daily Traffic User [DTU-PDM]');
+
+        data.addColumn('number', 'Daily Traffic User [DTU-RDM]');
+        data.addColumn('number', 'Loyalty [HAU/DAU]');
+        data.addColumn('number', 'Loyalty [1/Lambda1_DU]');
+        data.addColumn('number', 'Loyalty [1/Lambda2_DU]');
+        data.addColumn('number', 'Recency');
+
+
+        data.addColumn('number', 'Daily Traffic Item [DTI]');
+        data.addColumn('number', 'Daily Accessed Item [DAI]');
+        data.addColumn('number', 'Popularity [DTI/DAI]');
+        data.addColumn('number', 'Popularity [log(DTI/DAI)]');
+        data.addColumn('number', 'Popularity [1/Gamma1_DI]');
+        data.addColumn('number', 'Popularity [1/Gamma2_DI]');
+        data.addColumn('number', 'Popularity [Mu_DI]');
+        data.addColumn('number', 'Popularity [Sigma_DI]');
+
+        data.addColumn('number', 'Daily Traffic Item [DTI-GEO]');
+
+        data.addColumn('number', 'Daily Traffic Item [DTI-PDM]');
+
+        data.addColumn('number', 'Daily Traffic Item [DTI-RDM]');
+        data.addColumn('number', 'Longevity [HAI/DAI]');
+        data.addColumn('number', 'Longevity [1/Lambda1_DI]');
+        data.addColumn('number', 'Longevity [1/Lambda2_DI]');
+        data.addColumn('number', 'Freshness');
+
+      data.addColumn('string', 'DateString');
+      data.addColumn('number', 'Hour');
+      data.addColumn('string', 'Platform');
+      data.addColumn('string', 'Event Type');
+      data.addColumn('string', 'Content Type');
+      data.addRows([
+[*motionchartdaily*]
+  ]);
+      var motionchart = new google.visualization.MotionChart(
+          document.getElementById('daily'));
+      var options ={}
+            options['state'] = '{"yZoomedDataMin":4,"yLambda":1,"dimensions":{"iconDimensions":["dim0"]},"colorOption":"34","yZoomedDataMax":17458500,"xZoomedDataMin":0,"sizeOption":"2","orderedByY":false,"duration":{"multiplier":1,"timeUnit":"D"},"iconKeySettings":[],"playDuration":15000,"uniColorForNonSelected":false,"yAxisOption":"3","orderedByX":false,"xZoomedIn":false,"xAxisOption":"_ALPHABETICAL","iconType":"BUBBLE","showTrails":false,"xLambda":1,"yZoomedIn":false,"xZoomedDataMax":216,"nonSelectedAlpha":0.4}';
+            options['width'] = 1000;
+            options['height'] = 700;
+            motionchart.draw(data, options);
+    }
+google.setOnLoadCallback(drawVisualization);
+</script>
+
+</head>
+<html>
+<body>
 <img src="http://134.213.57.138/happit/Happit/pix/Happit_BW.png/">How Do You Feel?</a><br>
 
 <a href="http://feeling.happit.org/">How Do You Feel?</a><br>
 <a href="http://personal.happit.org/">Your Emotional Diary</a><br>
 <a href="http://map.happit.org/">How Others Feel?</a><br>
 
+
+</body>
+</html>
