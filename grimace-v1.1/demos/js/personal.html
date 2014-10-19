@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html><head>
+<title>Your Emotional Diary</title>
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load('visualization', '1', {'packages':['motionchart']});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+        var data = new google.visualization.DataTable();
+
+        data.addColumn('string', 'ID');
+        data.addColumn('date',   'date');
+        data.addColumn('number', 'Happiness');
+        data.addColumn('number', 'Surprise');
+        data.addColumn('number', 'Fear');
+        data.addColumn('number', 'Sadness');
+        data.addColumn('number', 'Disgust');
+        data.addColumn('number', 'Anger');
+        data.addColumn('number', 'Happiness_So_Far');
+        data.addColumn('number', 'Surprise_So_Far');
+        data.addColumn('number', 'Fear_So_Far');
+        data.addColumn('number', 'Sadness_So_Far');
+        data.addColumn('number', 'Disgust_So_Far');
+        data.addColumn('number', 'Anger_So_Far');
+        data.addColumn('number', 'Temperature');
+        data.addColumn('number', 'Lattitude');
+        data.addColumn('number', 'Longitude');
+
+data.addRows([
+
+          ['You',new Date('2014-07-13'),4.125,0.000490436,0.000245218,0.001,0.001226091,0.002206964,4.146885728,0.080922021,0.056400196,0.086316822,0.187591957,0.588769004,16,57.13121,-2.082261],
+          ['You',new Date('2014-07-17'),3.444444444,0.000242836,0.000242836,0.000728509,0.000242836,0.000728509,4.145701797,0.081593006,0.055852356,0.086692569,0.186983973,0.588878096,13,57.143396,-2.199525],
+
+  ]);
+
+
+                var options = {}
+                options['state'] = '{}';
+                options['width'] = 1000;
+                options['height'] = 700;
+
+                var chart = new google.visualization.MotionChart(document.getElementById('personal'));
+
+
+                chart.draw(data, options);
+                }
+                </script>
+                </head>
+
+                <body><h1>Your Personal Diary</h1>
+                <div id="personal" style="width: 800px; height: 600px;"></div>
+                </body>
+                </html>
