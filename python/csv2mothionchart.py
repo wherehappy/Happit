@@ -4,7 +4,7 @@ import csv
 import sys
 import datetime
 
-title = ""
+title = "Google Motion Chart csv converter Test"
 html_file_name = "personal.html"
 
 def getType(string):
@@ -16,14 +16,15 @@ def getType(string):
     except ValueError:
         return "string"
 
-def csv2bubble(csvfile, title, delimiter=',', quotechar='"'):
+def csv2motionchart(csvfile, title, delimiter=',', quotechar='"'):
     """
-csv to motion
+    This function takes in an csv file and a title and returns a html file with a working Google Motion Chart.
     """
+
 
     columns_as_javascript = []
     datarows_as_javascript = []
-
+    
     csvfile = csv.reader(csvfile, delimiter=delimiter, quotechar=quotechar)
     try:
         columns = csvfile.next()
@@ -33,6 +34,7 @@ csv to motion
         columns_as_javascript.append("data.addColumn('%s', '%s');" % ("date", "date"))
 
         for column_number in range(len(columns))[2:]:
+            # Google Motion Charts requires ID to be the first field and date to be the second.
             column_type = getType(first_row[column_number])
             column_name = columns[column_number].replace("_", " ").title()
             columns_as_javascript.append("data.addColumn('%s', '%s');" % (column_type, column_name))
@@ -58,7 +60,12 @@ csv to motion
                         else:
                             attributes.append(str(row[column_number]))
                 except IndexError:
+                    # Google Motion Chart will treat "" as a null value and ether remove bobles where it has no data.
+                    # Or interplolate if it as      an value for this field before and after.
                     attributes.append("")
+
+            # data_javascript rows should be on this format:
+            # ['Apples',  new Date('2011-04-11'), 1000, 300, 'East'],
 
             attributes_joined = ", ".join(attributes)
             datarows_as_javascript.append("\t[%s]" % attributes_joined)
@@ -87,7 +94,7 @@ csv to motion
         html += """
         // This should be a json object INSIDE A STRING.
         var options = {}
-        options['state'] = '{}';
+        options['state'] = '{"iconType":"BUBBLE","dimensions":{"iconDimensions":["dim0"]},"xAxisOption":"10","yZoomedDataMin":-656,"uniColorForNonSelected":false,"sizeOption":"2","showTrails":true,"yLambda":0,"yZoomedIn":false,"xZoomedDataMax":801083,"orderedByY":false,"iconKeySettings":[],"duration":{"multiplier":1,"timeUnit":"D"},"nonSelectedAlpha":0.4,"xZoomedDataMin":5,"colorOption":"3","time":"2014-07-09","yZoomedDataMax":47543,"playDuration":15000,"yAxisOption":"51","xZoomedIn":false,"xLambda":0,"orderedByX":false}';
         options['width'] = 1000;
         options['height'] = 700;
 
@@ -111,16 +118,17 @@ csv to motion
         print("The CSV file should have at least an header and one row.", file=sys.stderr)
 
     return html
-
+            
 if __name__ == '__main__':
     if not sys.stdin.isatty():
         csvfile = sys.stdin
     elif sys.argv >= 2:
         csvfile = open(sys.argv[1], "r")
     else:
-        print("Exmample: cat file.csv | ./csv2mothionchart.py > motionchart.html", file=sys.stderr)
+        print("Exmample: cat file.csv | ./csv2mothionchart.py > personal.html", file=sys.stderr)
         print("Or: ./csv2mothionchart.py file.csv > motionchart.html", file=sys.stderr)
         sys.exit(1)
 
-    title = "How Others Feel"
+    title = "personal"
     print(csv2motionchart(csvfile, title))
+        
